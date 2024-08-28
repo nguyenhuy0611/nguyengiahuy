@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function calculateTip(bill) {
+            // Tính tỷ lệ tiền boa dựa trên điều kiện
+            const tipPercentage = bill >= 50 && bill <= 300 ? 0.15 : 0.2;
+
+            // Tính tiền boa
+            const tip = bill * tipPercentage;
+
+            // Tính tổng hóa đơn
+            const total = bill + tip;
+
+            // In kết quả
+            console.log(`Hóa đơn là ${bill}, tiền boa là ${tip.toFixed(2)} và tổng giá trị ${total.toFixed(2)}`);
+        }
+
+        // Dữ liệu thử nghiệm
+        const bills = [275, 40, 430];
+
+        bills.forEach(bill => {
+            calculateTip(bill);
+        });
+    </script>
+</body>
+
+</html>

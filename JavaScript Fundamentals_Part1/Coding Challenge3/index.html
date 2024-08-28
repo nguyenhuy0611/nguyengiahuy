@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Hàm tính điểm trung bình
+        function calculateAverage(scores) {
+            const sum = scores.reduce((total, score) => total + score, 0);
+            return sum / scores.length;
+        }
+
+        // Dữ liệu thử nghiệm
+        const dolphinScores1 = [96, 108, 89];
+        const koalaScores1 = [88, 91, 110];
+
+        const dolphinScoresBonus1 = [97, 112, 101];
+        const koalaScoresBonus1 = [109, 95, 123];
+
+        const dolphinScoresBonus2 = [97, 112, 101];
+        const koalaScoresBonus2 = [109, 95, 106];
+
+        // Tính điểm trung bình và so sánh (không có quy tắc điểm tối thiểu)
+        const dolphinAverage1 = calculateAverage(dolphinScores1);
+        const koalaAverage1 = calculateAverage(koalaScores1);
+
+        console.log("Không có quy tắc điểm tối thiểu:");
+        if (dolphinAverage1 > koalaAverage1) {
+            console.log("Dolphins chiến thắng!");
+        } else if (dolphinAverage1 < koalaAverage1) {
+            console.log("Koalas chiến thắng!");
+        } else {
+            console.log("Hòa!");
+        }
+
+        // Tính điểm trung bình và so sánh (có quy tắc điểm tối thiểu)
+        const dolphinAverageBonus1 = calculateAverage(dolphinScoresBonus1);
+        const koalaAverageBonus1 = calculateAverage(koalaScoresBonus1);
+
+        console.log("\nVới quy tắc điểm tối thiểu 100:");
+        if (dolphinAverageBonus1 > koalaAverageBonus1 && dolphinAverageBonus1 >= 100) {
+            console.log("Dolphins chiến thắng!");
+        } else if (koalaAverageBonus1 > dolphinAverageBonus1 && koalaAverageBonus1 >= 100) {
+            console.log("Koalas chiến thắng!");
+        } else if (dolphinAverageBonus1 === koalaAverageBonus1 && dolphinAverageBonus1 >= 100) {
+            console.log("Hòa!");
+        } else {
+            console.log("Không có đội nào đạt đủ điều kiện để chiến thắng!");
+        }
+
+        // Tính điểm trung bình và so sánh (có quy tắc điểm tối thiểu, cả hòa cũng cần đạt tối thiểu)
+        const dolphinAverageBonus2 = calculateAverage(dolphinScoresBonus2);
+        const koalaAverageBonus2 = calculateAverage(koalaScoresBonus2);
+
+        console.log("\nVới quy tắc điểm tối thiểu 100 cho cả hòa:");
+        if (dolphinAverageBonus2 > koalaAverageBonus2 && dolphinAverageBonus2 >= 100) {
+            console.log("Dolphins chiến thắng!");
+        } else if (koalaAverageBonus2 > dolphinAverageBonus2 && koalaAverageBonus2 >= 100) {
+            console.log("Koalas chiến thắng!");
+        } else if (dolphinAverageBonus2 === koalaAverageBonus2 && dolphinAverageBonus2 >= 100) {
+            console.log("Hòa!");
+        } else {
+            console.log("Không có đội nào đạt đủ điều kiện để chiến thắng!");
+        }
+    </script>
+</body>
+
+</html>

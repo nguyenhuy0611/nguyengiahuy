@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Hàm tính điểm trung bình
+        const calcAverage = (a, b, c) => (a + b + c) / 3;
+
+        // Dữ liệu thử nghiệm
+        const scoreDolphins = [44, 23, 71];
+        const scoreKoalas = [65, 54, 49];
+
+        const scoreDolphins2 = [85, 54, 41];
+        const scoreKoalas2 = [23, 34, 27];
+
+        // Tính điểm trung bình của mỗi đội cho từng bộ dữ liệu
+        const avgDolphins = calcAverage(...scoreDolphins);
+        const avgKoalas = calcAverage(...scoreKoalas);
+
+        const avgDolphins2 = calcAverage(...scoreDolphins2);
+        const avgKoalas2 = calcAverage(...scoreKoalas2);
+
+        // Hàm xác định đội thắng
+        const checkWinner = (avgDolphins, avgKoalas) => {
+            if (avgDolphins >= 2 * avgKoalas) {
+                console.log(`Dolphins thắng (${avgDolphins} vs. ${avgKoalas})`);
+            } else 
+            if (avgKoalas >= 2 * avgDolphins) {
+                console.log(`Koalas thắng (${avgKoalas} vs. ${avgDolphins})`);
+            } else {
+                console.log('Không có đội nào thắng!'); 
+
+            }
+        };
+
+        // Kiểm tra người thắng cho từng bộ dữ liệu
+        checkWinner(avgDolphins, avgKoalas);
+        checkWinner(avgDolphins2, avgKoalas2);
+    </script>
+</body>
+
+</html>

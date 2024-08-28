@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Hàm tính tiền boa
+        function calcTip(bill) {
+            return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+        }
+
+        // Kiểm tra hàm với hóa đơn 100
+        console.log(calcTip(100)); // Output: 15
+
+        // Mảng chứa giá trị hóa đơn
+        const bills = [125, 555, 44];
+
+        // Mảng chứa giá trị tiền boa
+        const tips = bills.map(bill => calcTip(bill));
+
+        // Mảng chứa tổng giá trị
+        const totals = bills.map((bill, i) => bill + tips[i]);
+
+        console.log(bills, tips, totals);
+    </script>
+</body>
+
+</html>

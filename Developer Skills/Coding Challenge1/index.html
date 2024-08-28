@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function printForecast(arr) {
+            let currentTemp = arr[0];
+            let daysCount = 1;
+
+            for (let i = 1; i < arr.length; i++) {
+                if (arr[i] === currentTemp) {
+                    daysCount++;
+                } else {
+                    console.log(`... ${currentTemp}ºC trong ${daysCount} ngày`);
+                    currentTemp = arr[i];
+                    daysCount = 1;
+                }
+            }
+
+            console.log(`... ${currentTemp}ºC trong ${daysCount} ngày`);
+        }
+
+        const data1 = [17, 21, 23];
+        const data2 = [12, 5, -5, 0, 4];
+
+        printForecast(data1);
+        printForecast(data2);
+    </script>
+</body>
+
+</html>
